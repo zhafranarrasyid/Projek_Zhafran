@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soft_mint"
+    android:padding="32dp"
+    tools:context=".Tutorial2Fragment">
+
+    <ImageView
+        android:id="@+id/imgTutorial2"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="Tutorial 2 Image"
+        android:src="@drawable/healthcare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="Rekam Medis Terjaga"
+        android:textColor="@color/dark_navy"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTutorial2" />
+
+    <TextView
+        android:id="@+id/tvDesc2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="Catatan kesehatan dan riwayat pemeriksaan Anda tersimpan secara rapi, aman, dan dapat diakses kapan saja."
+        android:textColor="@color/dark_teal"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

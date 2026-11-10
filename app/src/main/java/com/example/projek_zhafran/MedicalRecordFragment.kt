@@ -13,10 +13,9 @@ class MedicalRecordFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val recordList = listOf(
-        MedicalRecord("12 Oktober 2026", "Konsultasi Dokter Umum", "dr. Andi Pratama"),
-        MedicalRecord("14 Oktober 2026", "Konsultasi Spesialis Anak", "dr. Siti Rahma"),
-        MedicalRecord("16 Oktober 2026", "Pemeriksaan Kesehatan", "dr. Budi Santoso"),
-        MedicalRecord("18 Oktober 2026", "Konsultasi Spesialis Kulit", "dr. Maya Putri")
+        MedicalRecord("15 Okt 2025", "Konsultasi Umum", "dr. Arif Rahman"),
+        MedicalRecord("02 Sep 2025", "Pemeriksaan Rutin", "dr. Bima Putra"),
+        MedicalRecord("18 Jul 2025", "Konsultasi Umum", "dr. Fajar Pratama")
     )
 
     override fun onCreateView(

@@ -11,25 +11,89 @@
         android:id="@+id/tvTitleDoctor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Daftar Dokter"
+        android:text="Cari Dokter"
         android:textColor="@color/dark_navy"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- ChipGroup Filter -->
+    <HorizontalScrollView
+        android:id="@+id/scrollChips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleDoctor">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSemua"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Semua"
+                app:chipBackgroundColor="@color/white" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipUmum"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dokter Umum"
+                app:chipBackgroundColor="@color/white" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipJantung"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spesialis Jantung"
+                app:chipBackgroundColor="@color/white" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnak"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spesialis Anak"
+                app:chipBackgroundColor="@color/white" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPenyakitDalam"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spesialis Penyakit Dalam"
+                app:chipBackgroundColor="@color/white" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
     <ListView
         android:id="@+id/listViewDoctors"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleDoctor" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollChips" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

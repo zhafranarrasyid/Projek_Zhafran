@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".TutorialActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".BaseActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

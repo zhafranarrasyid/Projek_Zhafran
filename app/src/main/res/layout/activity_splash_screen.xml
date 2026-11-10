@@ -5,54 +5,64 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/soft_mint"
     tools:context=".SplashScreenActivity">
 
+    <!-- Center Content (Logo + Title + Tagline) -->
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="161dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="144dp"
+        android:id="@+id/imgLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="SehatKu Logo"
+        android:src="@drawable/logo_sehatku"
+        app:layout_constraintBottom_toTopOf="@+id/tvAppName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_sehatku" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/inter_bold"
         android:text="SehatKu"
         android:textColor="@color/dark_navy"
-        android:textSize="40sp"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTagline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvTagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="316dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="Versi 1.1"
-        android:textColor="@color/dark_navy"
-        android:textStyle="italic"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:text="Kesehatanmu,\nDalam Genggaman."
+        android:textColor="@color/dark_teal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvFooter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
+    <!-- Footer Text -->
+    <TextView
+        android:id="@+id/tvFooter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="Konsultasi mudah. Catatan terjaga."
+        android:textColor="#8A9A9D"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

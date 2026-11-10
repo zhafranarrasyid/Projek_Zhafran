@@ -3,7 +3,7 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_home"
-        android:title="Beranda" />
+        android:title="Home" />
     <item
         android:id="@+id/nav_doctor"
         android:icon="@drawable/ic_doctor"
@@ -11,7 +11,7 @@
     <item
         android:id="@+id/nav_medical_record"
         android:icon="@drawable/ic_medical"
-        android:title="Rekam Medis" />
+        android:title="Rekam" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile"

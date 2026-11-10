@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,128 +7,366 @@
     android:background="@color/soft_mint"
     tools:context=".HomeFragment">
 
-    <!-- Header Background -->
-    <View
-        android:id="@+id/viewHeader"
-        android:layout_width="0dp"
-        android:layout_height="160dp"
-        android:background="@color/dark_teal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="Selamat Datang di SehatKu"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingBottom="24dp">
 
-    <TextView
-        android:id="@+id/tvSubJudul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/inter_regular"
-        android:text="Aplikasi Konsultasi &amp; Rekam Medis Pribadi"
-        android:textColor="@color/soft_mint"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+        <!-- Wave Header Background -->
+        <View
+            android:id="@+id/viewHeaderWave"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:background="@drawable/bg_header_wave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Card Menu Utama -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewHeader">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <!-- Header Greeting & Avatar -->
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="24dp">
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Selamat pagi,"
+            android:textColor="@color/soft_mint"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvMenuTitle"
-                android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Halo, Dinda"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGreeting" />
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/user"
+            android:contentDescription="User Avatar"
+            app:layout_constraintBottom_toBottomOf="@+id/tvUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvGreeting" />
+
+        <!-- Search Bar Mockup -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSearch"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsername">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Search Icon"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="#8A9A9D" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Cari dokter atau spesialis"
+                    android:textColor="#8A9A9D"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Banner Card: Konsultasi dari rumah -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/primary_teal"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardSearch">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_bold"
-                android:text="Menu Utama"
-                android:textColor="@color/dark_navy"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:padding="20dp">
 
-            <TextView
-                android:id="@+id/tvMenuDesc"
+                <TextView
+                    android:id="@+id/tvBannerSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Konsultasi dari rumah"
+                    android:textColor="@color/soft_mint"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBannerTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Dokter siap membantumu"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBannerSub" />
+
+                <Button
+                    android:id="@+id/btnMulaiKonsultasi"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="0dp"
+                    android:text="Mulai konsultasi →"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBannerTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Grid Layout Component for Quick Services -->
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridServices"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            app:columnCount="4"
+            app:useDefaultMargins="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardBanner">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGridCari"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="Pilih layanan kesehatan digital Anda"
-                android:textColor="#8A9A9D"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvMenuTitle" />
+                android:fontFamily="@font/inter_semibold"
+                android:text="Cari Dokter"
+                android:textSize="11sp"
+                app:cornerRadius="12dp"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal"
+                app:strokeColor="@color/primary_teal" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGridBooking"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Booking"
+                android:textSize="11sp"
+                app:cornerRadius="12dp"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal"
+                app:strokeColor="@color/primary_teal" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGridRekam"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Rekam Medis"
+                android:textSize="11sp"
+                app:cornerRadius="12dp"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal"
+                app:strokeColor="@color/primary_teal" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGridRiwayat"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Riwayat"
+                android:textSize="11sp"
+                app:cornerRadius="12dp"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill_horizontal"
+                app:strokeColor="@color/primary_teal" />
+        </androidx.gridlayout.widget.GridLayout>
+
+        <!-- Section: Dokter Rekomendasi -->
+        <TextView
+            android:id="@+id/tvRekomendasiTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Dokter rekomendasi"
+            android:textColor="@color/dark_navy"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridServices" />
+
+        <TextView
+            android:id="@+id/tvLihatSemua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Lihat semua"
+            android:textColor="@color/dark_teal"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRekomendasiTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRekomendasiTitle" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDoctorRec"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/imgRecDoc"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:contentDescription="Doctor Photo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRecDocName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="dr. Arif Rahman"
+                    android:textColor="@color/dark_navy"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgRecDoc"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvRecDocSpec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="Dokter Umum"
+                    android:textColor="#8A9A9D"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgRecDoc"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRecDocName" />
+
+                <TextView
+                    android:id="@+id/tvRecDocRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="⭐ 4.9 · 8 thn"
+                    android:textColor="@color/dark_teal"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/imgRecDoc"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRecDocSpec" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quick Menu Actions (Detail, Tips, WebView) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardDoctorRec">
 
             <Button
                 android:id="@+id/btnDetail"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/primary_teal"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Detail Informasi"
                 android:textColor="@color/white"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvMenuDesc" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnSnackBar"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/dark_teal"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Info &amp; Tips Kesehatan"
                 android:textColor="@color/white"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnDetail" />
+                app:cornerRadius="12dp" />
 
             <Button
                 android:id="@+id/btnWebView"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#16333A"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/dark_navy"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Portal Berita Medis (Web)"
                 android:textColor="@color/white"
-                app:cornerRadius="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnSnackBar" />
+                app:cornerRadius="12dp" />
+        </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
